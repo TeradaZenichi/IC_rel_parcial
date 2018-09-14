@@ -1,0 +1,48 @@
+\documentclass[a4paper, 12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %Pacotes carregados%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+\usepackage[utf8]{inputenc}         %Permite acentuação
+\usepackage[brazilian]{babel}       %Identifica erro gramatical e mudança de linguagem
+\usepackage{amsmath}
+\usepackage{graphicx}               %Importação de imagem
+\usepackage{cite}                   %Pacote de citações
+\usepackage{makeidx}                %Pacote para gerar sumário
+\usepackage{enumerate}              %Pacote para utilizar o ambiente enumerate
+\usepackage{indentfirst}            %Pacote que corrige o espaço dos parágrafos
+\usepackage{setspace}               %Pacote de espaçamento entre linhas
+\usepackage{enumitem}               %Pacote de ambiente itemize
+\usepackage{hyperref}               %Pacote de gerenciamento de hiperlinks
+\usepackage{url}                    %Pacote de gerenciamento de urls
+\usepackage{colortbl}               %Pacote que permite o uso de cores nas tabelas
+\usepackage{booktabs}               %Pacote para estilizar a coluna de tabelas
+\usepackage{siunitx}                %Utilização de unidades do SI
+\usepackage{placeins}               %Permite usar FloatBarrier pra delimitar até onde uma figura pode aparecer
+%\usepackage[alf]{abntex2cite}      %Referências em ABNT... BUG
+\usepackage[left=3.00cm, right=2.00cm, top=3.00cm, bottom=2.00cm]{geometry}                                                     %Margem padrão ABNT
+
+\let\Oldsection\section
+\renewcommand{\section}{\FloatBarrier\Oldsection} %Figuras de uma seção não podem aparecer em outra seção
+
+\let\Oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection} %Figuras de uma subseção não podem aparecer em outra subseção
+
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection} %Figuras de uma subsubseção não podem aparecer em outra subsubseção
+
+\hypersetup{colorlinks = true, linkcolor=black, urlcolor = blue, citecolor = black}
+\begin{document}
+    \onehalfspacing                 %Para um espaçamento de 1,5 padrão ABNT
+    \input{1_coverpage.tex}
+    \tableofcontents
+    \input{2_introduction.tex}
+    \input{3_methodology.tex}
+    \input{4_conclusion.tex}
+    \input{5_results.tex}
+
+    %\nocite{*}                      %Adiciona referências à bibliografia sem terem que ser citadas
+    
+    \bibliographystyle{ieeetr}       %Estilo de apresentação da bibliografia
+    \bibliography{6_ref.bib}            %Insere referencias ao texto
+    
+\end{document}
