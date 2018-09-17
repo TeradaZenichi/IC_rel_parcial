@@ -18,6 +18,7 @@
 \usepackage{booktabs}               %Pacote para estilizar a coluna de tabelas
 \usepackage{siunitx}                %Utilização de unidades do SI
 \usepackage{placeins}               %Permite usar FloatBarrier pra delimitar até onde uma figura pode aparecer
+\usepackage{float}
 %\usepackage[alf]{abntex2cite}      %Referências em ABNT... BUG
 \usepackage[left=3.00cm, right=2.00cm, top=3.00cm, bottom=2.00cm]{geometry}                                                     %Margem padrão ABNT
 
@@ -30,19 +31,26 @@
 \let\Oldsubsubsection\subsubsection
 \renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection} %Figuras de uma subsubseção não podem aparecer em outra subsubseção
 
+\sisetup{per-mode=symbol} %usa / ao invés de ^-1 em unidades do tipo V/A
+\renewcommand{\subsection}{\FloatBarrier\Oldsubsection} %Figuras de uma subseção não podem aparecer em outra subseção
+
+\let\Oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\Oldsubsubsection} %Figuras de uma subsubseção não podem aparecer em outra subsubseção
+
 \hypersetup{colorlinks = true, linkcolor=black, urlcolor = blue, citecolor = black}
 \begin{document}
     \onehalfspacing                 %Para um espaçamento de 1,5 padrão ABNT
     \input{1_coverpage.tex}
-    \tableofcontents
+   % \tableofcontents
     \input{2_introduction.tex}
     \input{3_methodology.tex}
-    \input{4_conclusion.tex}
-    \input{5_results.tex}
+    \input{4_results.tex}
+    \input{5_conclusion.tex}
+    
 
     %\nocite{*}                      %Adiciona referências à bibliografia sem terem que ser citadas
     
     \bibliographystyle{ieeetr}       %Estilo de apresentação da bibliografia
-    \bibliography{6_ref.bib}            %Insere referencias ao texto
+    \bibliography{mendeley_v2}            %Insere referencias ao texto
     
 \end{document}
