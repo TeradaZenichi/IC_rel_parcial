@@ -1,0 +1,17 @@
+\select@language {brazilian}
+\contentsline {section}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{7}{section.1}
+\contentsline {section}{\numberline {2}Objetivos}{8}{section.2}
+\contentsline {section}{\numberline {3}Metodologia}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introdu\IeC {\c c}\IeC {\~a}o a Linguagem de Programa\IeC {\c c}\IeC {\~a}o Matem\IeC {\'a}tica}{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Hip\IeC {\'o}teses e defini\IeC {\c c}\IeC {\~o}es da formula\IeC {\c c}\IeC {\~a}o do problema}{8}{subsection.3.2}
+\contentsline {section}{\numberline {4}Restri\IeC {\c c}\IeC {\~o}es do problema}{9}{section.4}
+\contentsline {subsection}{\numberline {4.1}Balan\IeC {\c c}o de pot\IeC {\^e}ncia}{9}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Queda de tens\IeC {\~a}o entre n\IeC {\'o}s}{10}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Fluxo de corrente em um ramo}{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Restri\IeC {\c c}\IeC {\~o}es operativas do sistema}{11}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Limites de tens\IeC {\~a}o}{11}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}Limite de corrente}{12}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}Chaves presentes no sistema}{12}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}Restri\IeC {\c c}\IeC {\~a}o de radialidade}{13}{subsubsection.4.4.4}
+\contentsline {section}{\numberline {5}Modelo matem\IeC {\'a}tico do problema}{15}{section.5}
+\contentsline {section}{\numberline {6}Implementando o PNLIM}{16}{section.6}
