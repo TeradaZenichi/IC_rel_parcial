@@ -1,0 +1,54 @@
+\section{Modelo matemático do problema}
+
+Com base nas deduções e hipóteses adotadas anteriormente, o problema de reconfiguração de uma rede elétrica radial pode ser representado utilizando um modelo de programação linear inteiro misto (PNLIM), mostrado a seguir:
+
+\begin{equation*}
+    \text{Min} = c^{lss}\sum_{ij\in\Omega_{l}}R_{ij}I_{ij}^{sqr}
+\end{equation*}
+
+Sujeito a:
+
+\begin{equation*}
+    \sum_{ji\in\Omega_{l}}P_{ji} - \sum_{ij\in\Omega_{l}}(P_{ij} + R_{ij}I_{ij}^{sqr})+ \sum_{ji\in\Omega_{ch}}P_{ji}^{ch} -\sum_{ij\in\Omega_{ch}}P_{ij}^{ch} + P_{i}^{S} = P_{i}^{D}\quad\forall i \in\Omega_{b}  
+\end{equation*}
+    
+\begin{equation*}
+    \sum_{ji\in\Omega_{l}}Q_{ji} - \sum_{ij\in\Omega_{l}}(Q_{ij} + X_{ij}I_{ij}^{sqr})+ \sum_{ji\in\Omega_{ch}}Q_{ji}^{ch} -\sum_{ij\in\Omega_{ch}}Q_{ij}^{ch} + Q_{i}^{S} = Q_{i}^{D}\quad\forall i \in\Omega_{b}
+\end{equation*}
+
+\begin{equation*}
+    V_{i}^{sqr} - 2(R_{ij}P_{ij} + X_{ij}Q_{ij}) - Z_{ij}^{2}I_{ij}^{sqr} - V_{j}^{sqr} = 0\quad\forall ij \in \Omega_{l}
+\end{equation*}
+
+\begin{equation*}
+    V_{j}^{sqr}I_{ij}^{sqr} = P_{ij}^{2}+Q_{ij}^{2}\quad\forall ij \in \Omega_{l}
+\end{equation*}
+
+\begin{equation*}
+    -(\overline{V}^{2} - \underline{V}^{2})(1-w_{ij}) \leq V_{i}^{sqr} - V_{j}^{sqr} \leq (\overline{V}^{2} - \underline{V}^{2})(1-w_{ij})\qquad ij\in\Omega_{ch}        
+\end{equation*}
+    
+\begin{equation*}
+    -(\overline{V}\,\overline{I}_{ij}^{ch})w_{ij} \leq P_{ij}^{ch} \leq (\overline{V}\,\overline{I}_{ij}^{ch})w_{ij}\qquad ij\in\Omega_{ch}
+\end{equation*}
+    
+    
+\begin{equation*}
+    -(\overline{V}\,\overline{I}_{ij}^{ch})w_{ij} \leq Q_{ij}^{ch} \leq (\overline{V}\,\overline{I}_{ij}^{ch})w_{ij}\qquad ij\in\Omega_{ch}   
+\end{equation*}
+    
+\begin{equation*}
+    |\Omega_{l}| + \sum_{ij\in\Omega_{ch}}w_{ij} = |\Omega_{b}| - 1
+\end{equation*}
+
+\begin{equation*}
+    \underline{V}^{2} \leq V_{i}^{sqr} \leq \overline{V}^{2}\qquad i \in\Omega_{b}
+\end{equation*}
+
+\begin{equation*}
+    0 \leq I_{ij}^{sqr} \leq \overline{I}_{ij}^{2} \qquad ij\in\Omega_{l} 
+\end{equation*}
+
+\begin{equation*}
+    w_{ij}\quad\text{binário}\qquad\forall ij \in\Omega_{ch}
+\end{equation*}
