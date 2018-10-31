@@ -1,0 +1,78 @@
+\section{Resultados}
+
+Para a análise dos dados dos resultados, considere a rede didática de 45 nós com os seguintes parâmetros:
+
+\begin{table}[H]\footnotesize
+    \begin{minipage}{.5\linewidth}
+        \caption{Parâmetros de impedância e corrente máxima para o conjunto de circuitos da rede didática de 45 nós}
+        \centering
+        \input{00_tables/00_param_imped.tex}
+    \end{minipage}%
+    \begin{minipage}{.5\linewidth}
+        \centering
+        \caption{Potência ativa e reativa de demanda para cada nó da rede didática de 45 nós}
+        \input{00_tables/01_demanda_barras.tex}
+    \end{minipage} 
+\end{table}
+
+\input{00_tables/02_chaves_est_atual.tex}
+
+%Identificar o perfil de tensão ao longo da rede de distribuição
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{01_img/Diagrama_inicial.png}
+    \caption{Estado inicial da rede de distribuição com alimentador no nó 1}  
+    \label{fig:rede_inic}
+\end{figure}
+
+\input{00_tables/03_fluxo_kW_atual.tex}
+
+\input{00_tables/04_fluxo_kVar_atual.tex}
+
+\input{00_tables/05_pot_chaves_atual.tex}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{01_img/Perfil_tensao_atual.png}
+    \caption{Perfil da tensão da rede atual}
+    \label{fig:voltages_atual}
+\end{figure}
+
+
+
+
+
+
+%rede já otimizada
+
+\input{00_tables/06_chaves_otim.tex}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{01_img/rede_otimizada.png}
+    \caption{Estado final da rede após a reconfiguração com alimentador no nó 1}
+    \label{fig:rede_otim}
+\end{figure}
+
+\input{00_tables/09_fluxo_kw_otim.tex}
+
+\input{00_tables/08_fluxo_kvar_otim.tex}
+
+\input{00_tables/10_pot_chaves_otim.tex}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{01_img/Perfil_tensao_otim.png}
+    \caption{Perfil de tensão em cada nó após a reconfiguração}
+    \label{fig:voltages_otim}
+\end{figure}
+
+\input{00_tables/11_comparacao_geral.tex}
+
+\subsection{Discussão dos resultados}
+
+Com base nos resultados observados anteriormente, algumas ressalvas podem ser feitas com relação aos mesmos.
+
+\textbf{citar AgenciaNacionaldeEnergiaEletrica2018ModuloVigencia}

@@ -1,7 +1,11 @@
 \section{Implementando o PNLIM}
 
-\verb|PNLIM_RSD.dat|
+A implementação do programação não linear inteiro misto obtido da análise física e operativa da rede no AMPL é dada a partir de 3 arquivos principais.
+O arquivo de extensão .mod possui a modelagem do problema com base na formulação algébrica das restrições adequado a linguagem do AMPL. 
 
-\begin{equation}
-    \oint \vec{E}\cdot d\vec{l}
-\end{equation}
+\lstinputlisting[language=AMPL]{02_code/PNLIM_RSD.mod}
+
+Os dados que serão processados pelo modelo estão contidos em um arquivo de extensão .dat
+
+
+%\gls{}

@@ -1,23 +1,46 @@
 \documentclass[a4paper, 12pt]{article}
-\input{0_Config.tex}                %Arquivo de configuração do trabalho
+\usepackage[utf8]{inputenc}         %Permite acentuação
+\usepackage[brazilian]{babel}       %Adequação para a lingua portugues
+\usepackage{courier}                %Pacote fonte de listing que suporta negrito
+\usepackage{amsmath}                %Pacote auxiliar para matemática
+\usepackage{graphicx}               %Importação de imagem
+\usepackage{cite}                   %Pacote de citações
+\usepackage{makeidx}                %Pacote para gerar sumário
+\usepackage{enumerate}              %Pacote para utilizar o ambiente enumerate
+\usepackage{indentfirst}            %Pacote que corrige o espaço dos parágrafos
+\usepackage{setspace}               %Pacote de espaçamento entre linhas
+\usepackage{enumitem}               %Pacote de ambiente itemize
+\usepackage{hyperref}               %Pacote de gerenciamento de hiperlinks
+\usepackage{url}                    %Pacote de gerenciamento de urls
+\usepackage{siunitx}                %Utilização de unidades do SI
+\usepackage{placeins}               %Permite Delimitar até onde uma figura pode aparecer
+\usepackage{float}                  %Especificar onde a figura deve ficar
+\usepackage{listings}               %Pacote que permite adicionar códigos ao texto
+\usepackage{amssymb}                %Pacote de símbolos matemáticos
+\usepackage{graphics,graphicx}      %Adicionar caixas de texto
+\usepackage{fancybox}               %Pacote para a inserção de caixas de texto
+\usepackage{booktabs}               %Pacote para adicionar tabelas lado a lado
+\usepackage{subfig}                 %pacote para criação de subfiguras
+
+\input{03_conf/0_Configpage.tex}            %Arquivo de configuração do projeto
 
 \begin{document}
-    \onehalfspacing                 %Para um espaçamento de 1,5 padrão ABNT
-    \input{0_Coverpage.tex}         %Capa do projeto de iniciação científica
-    \input{0_Pretextual.tex}        %Elementos pré-textuais
-    \tableofcontents                %Sumário
-    \newpage
-    \input{1_Introduction.tex}
-    \input{2_Objetivos.tex}
-    \input{3_Metodologia.tex}
-    \input{4.0_Rest.tex}
-    \input{4.1_Balanco_pot.tex}
-    \input{4.2_Rest_tensao.tex}
-    \input{4.3_Rest_corrente.tex}
-    \input{4.4_Rest_operativas.tex}
-    \input{5.0_Formulacao.tex}
-    \input{6.0_Program.tex}
-    \bibliographystyle{ieeetr}       %Estilo de apresentação da bibliografia
-    \bibliography{mendeley_v2}            %Insere referencias ao texto
-    
+    \onehalfspacing                         %Ajusta espaço entre linhas para 1.5
+    \input{03_conf/1_Coverpage.tex}         %Adiciona a página de capa do projeto
+    \input{0.0_Pretextpage.tex}             %Adiciona página de elementos pré textuais
+    \tableofcontents                        %Adiciona o sumário no documento
+    \input{1.0_Introduction.tex}            %Adiciona a introdução do documento
+    \input{2.0_Objectives.tex}              %Adciona a seção de objetivos
+    \input{3.0_methodology.tex}             %Adciona seção de metodologia
+    \input{4.0_Restrictions.tex}            %Adiciona seção de restrições
+    \input{4.1_Restpower.tex}               %Adiciona seção de restrição
+    \input{4.2_Restvoltage.tex}             %Adiciona seção de restrição
+    \input{4.3_Restcurrent.tex}             %Adiciona seção de restrição
+    \input{4.4_Restoperative.tex}           %Adiciona seção de restrição
+    \input{5.0_Formulation.tex}             %Adiciona a formulação do problema
+    \input{6.0_Program.tex}                 %Adiciona o programa de otimização
+    \input{7.0_Results.tex}                 %Adiciona os resultados obtidos
+    \bibliographystyle{plain}               %Estilo de apresentação da bibliografia
+    \bibliography{mendeley.bib,webpage.bib} %Arquivos de referência para importação
+
 \end{document}

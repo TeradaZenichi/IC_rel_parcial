@@ -19,7 +19,7 @@ param Vmax;                 # magnitude de tensão máxima
 
 # declaração das variáveis
 var Vqdr{ob};               # variável que representa o quadrado de V[i]
-var PS{ob};                 # potência ativa fornecida pela subestação no nó i
+var PS{ob};                 # potência ativa fornecida pela subestação no  nó i
 var QS{ob};                 # potência reativa fornecida pela subestação no nó i
 var Iqdr{ol};               # variável que representa o quadrado de I[i,j]
 var P{ol};                  # fluxo de potência ativa no circuito ij

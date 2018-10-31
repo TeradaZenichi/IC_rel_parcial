@@ -1,0 +1,14 @@
+\section{Modelagem do problema}
+
+\subsection{Função objetivo}
+
+Dado o modelo de otimização a ser interpretado pelo AMPL, é possível definir a função objetivo com base na figura~\ref{fig:SDR}.
+A fim de reduzir as perdas ôhmicas na rede elétrica, a função objetivo do problema consiste em minimizar a somatória das perdas por resistência elétrica no conjunto de circuitos do sistema.
+
+Definindo $c^{lss}$ como parâmetro que representa o custo das perdas de potência ativa na rede têm-se:
+
+\begin{equation}
+    \text{Min} = c^{lss}\sum_{ij\in\Omega_{l}}R_{ij}I_{ij}^{2}
+\end{equation}
+
+Tal que, $\Omega_{l}$ é o conjunto de circuitos do sistema.
