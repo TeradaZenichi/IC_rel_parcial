@@ -1,16 +1,144 @@
-{\large\textbf{Resumo das atividades}}      %Resumo de atividades do bolsista
+%%=====================================================%%
+%%=====================================================%%
+\begin{center}
+    \textbf{Resumo de atividades}
+\end{center}
 
-{\large\textbf{Resumo}}                     %Resumo do projeto
+Esta seção apresenta o resumo das atividades desenvolvidas no segundo semestre de 2018 durante o primeiro semestre de bolsa FAPESP pelo bolsista Lucas Zenichi Terada.
+
+\textbf{\emph{Motivação:}} O problema de reconfiguração de uma rede de distribuição é um problema de tomada de decisões no qual, determina o estado de operação das chaves disponíveis na rede com o objetivo de minimizar os custos operativos do sistema de distribuição ao longo de um período de planejamento.
+Como a nova topologia da rede vai operar por um longo período de tempo, é necessário modelar de forma correta a demanda da rede, uma alternativa é considerar diferentes níveis de demanda. 
+Do ponto de vista prático as empresas de distribuição têm como objetivo definir a nova topologia da rede considerando os diferentes níveis de demanda, manter a radialidade do sistema e que as restrições operacionais também sejam satisfeitas. 
+Porém do ponto de vista teórico, este problema é complexo e de difícil solução devido à natureza combinatória do problema e a não linearidade nas restrições operativas das redes de distribuição.
+
+\textbf{Atividades realizadas no que se refere ao relatório:}
+
+\begin{itemize}
+    \item Estudo da bibliografia;
+    
+    \item Estudo da linguagem AMPL;
+    
+    \item Modelagem do problema de reconfiguração;
+    
+    \item Confecção do código com base na modelagem;
+    
+    \item Análise dos resultados.
+\end{itemize}
+
+Após a entrega do relatório parcial, começará a segunda parte do projeto o qual está descrito no final desse documento na seção ``Conclusão e próxima etapa''.
+%%=====================================================%%
+%%=====================================================%%
+
+\clearpage
+
+\begin{abstract}
+
+O problema da reconfiguração do sistema de distribuição de energia elétrica é um problema de planejamento da operação das chaves alocadas ao longo dos alimentadores e consiste na abertura e/ou fechamento das chaves com o objetivo de melhorar um índice de desempenho. O problema lida com topologias radiais e tem como propósito reconfigurar a rede de distribuição de modo a minimizar a somatória de perdas ôhmicas. A nova rede, agora operando em regime permanente no estado de mínimas perdas, deve possuir topologia radial e com restrições operativas do sistema obedecidas. A modelagem do problema resulta em um problema de programação não linear inteiro misto (PNLIM), a modelagem foi feita em uma linguagem de modelagem para programação matemática (AMPL). A importância de uma linguagem pra modelagem dá-se uma vez que não há necessidade de reajustar o mesmo para problemas similares de tamanhos diferentes. Por fim, problemas não lineares são complicados de obter um resultado proveniente do algoritmo de convergência para isso faz-se necessário estudar um modelo linear ou convexo que seja mais confiável, robusto e possa trazer o resultado em tempo hábil.
+
+
+
+
+\end{abstract}
+
+
+
+%%=====================================================%%
+%%=====================================================%%
+
 
 \clearpage                                  %Quebra de página
-
 \listoffigures                              %Adiciona a lista de figuras
-
 \clearpage                                  %Quebra de página
-
 \listoftables                               %Adiciona a lista de tabelaas
-
 \clearpage                                  %Quebra de página
+\clearpage                                  %Quebra de página
+
+\makenomenclature
+\renewcommand{\nomname}{Lista de símbolos e nomenclaturas}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{C}{Conjuntos}{%
+  \ifstrequal{#1}{V}{Variáveis}{%
+  \ifstrequal{#1}{P}{Parâmetros}{
+  \ifstrequal{#1}{A}{Abreviações}{}}}}%
+]}
+
+\nomenclature[A]{AMPL}{A Modeling Language for Mathematical Programming}
+\nomenclature[A]{ANEEL}{Agência nacional de energia elétrica}
+\nomenclature[A]{KNITRO}{Nonlinear Interior-point Trust Region Optimizer}
+\nomenclature[A]{SDEE}{Sistema de distribuição de energia elétrica}
+\nomenclature[A]{RSD}{Reconfiguração do sistema de distribuição}
+\nomenclature[A]{PL}{Programação Linear}
+\nomenclature[A]{PNL}{Programação não linear}
+\nomenclature[A]{PLIM}{Programação linear inteiro misto}
+\nomenclature[A]{PNLIM}{Programação não linear inteiro misto}
+\nomenclature[A]{PCSOIM}{Programação cônica de segunda ordem inteiro misto}
+\nomenclature[A]{Bonmin}{Basic Open-source Nonlinear Mixed INteger programming}
+
+\nomenclature[C]{$\Omega_b$}{Conjunto de nós do sistema}
+\nomenclature[C]{$\Omega_l$}{Conjunto de circuitos do sistema}
+\nomenclature[C]{$\Omega_{ch}$}{Conjunto de chaves do sistema}
+
+%\nomenclature[P]{$ $}{}
+\nomenclature[P]{$R_{ij}$}{Resistência entre o no nó i e o nó j}
+\nomenclature[P]{$X_{ij}$}{Reatância entre o nó i e o nó j}
+\nomenclature[P]{$Z_{ij}$}{Impedância entre o nó i e o nó j}
+\nomenclature[P]{$P_i^D$}{Demanda de potência ativa no nó i}
+\nomenclature[P]{$Q_i^D$}{Demanda de potência reativa no nó i}
+\nomenclature[P]{$P_j^D$}{Demanda de potência ativa no nó j}
+\nomenclature[P]{$Q_j^D$}{Demanda de potência reativa no nó j}
+\nomenclature[P]{$P_k^D$}{Demanda de potência ativa no nó k}
+\nomenclature[P]{$Q_k^D$}{Demanda de potência reativa no nó k}
+\nomenclature[P]{$P_i^S$}{Potência ativa fornecida pela subestação no nó i}
+\nomenclature[P]{$P_i^S$}{Potência reativa fornecida pela subestação no nó i}
+\nomenclature[P]{$P_j^S$}{Potência ativa fornecida pela subestação no nó j}
+\nomenclature[P]{$P_j^S$}{Potência reativa fornecida pela subestação no nó j}
+\nomenclature[P]{$P_k^S$}{Potência ativa fornecida pela subestação no nó k}
+\nomenclature[P]{$P_k^S$}{Potência reativa fornecida pela subestação no nó k}
+\nomenclature[P]{$\underline{V}$}{Limite mínimo de tensão permitido}
+\nomenclature[P]{$\overline{V}$}{Limite máximo de tensão permitido}
+\nomenclature[P]{$\overline{I}_{ij}$}{Limite máximo de fluxo de corrente entre os nós i e j}
+\nomenclature[P]{$\overline{I}_{ij}^{ch}$}{Fluxo de corrente máximo permitido na chave entre o nó i e o nó j}
+
+
+
+%\nomenclature[V]{$ $}{}
+\nomenclature[V]{$V_i$}{Magnitude da tensão no nó i}
+\nomenclature[V]{$V_j$}{Magnitude da tensão no nó j}
+\nomenclature[V]{$V_k$}{Magnitude da tensão no nó k}
+\nomenclature[V]{$\Vec{V}_i$}{Fasor tensão no nó i}
+\nomenclature[V]{$\Vec{V}_j$}{Fasor tensão no nó j}
+\nomenclature[V]{$\Vec{V}_k$}{Fasor tensão no nó k}
+\nomenclature[V]{$I_{ij}$}{Magnitude da corrente entre o nó i e o nó j}
+\nomenclature[V]{$I_{ki}$}{Magnitude da corrente entre o nó k e o nó i}
+\nomenclature[V]{$\vec{I}_{ij}$}{Fasor corrente entre o nó i e o nó j}
+\nomenclature[V]{$\vec{I}_{ki}$}{Fasor corrente entre o nó k e o nó i}
+\nomenclature[V]{$V_i^{sqr}$}{Variável que representa o quadrado da tensão $V_i$}  
+\nomenclature[V]{$V_j^{sqr}$}{Variável que representa o quadrado da tensão $V_j$}
+\nomenclature[V]{$V_k^{sqr}$}{Variável que representa o quadrado da tensão $V_k$}
+\nomenclature[V]{$P_{ij}$}{Fluxo de potência ativa entre o nó i e o nó j}
+\nomenclature[V]{$P_{ki}$}{Fluxo de potência ativa entre o nó k e o nó i}
+\nomenclature[V]{$P_{ji}$}{Fluxo de potência ativa entre o nó j e o nó i}
+\nomenclature[V]{$Q_{ji}$}{Fluxo de potência reativa entre o nó j e o nó i}
+\nomenclature[V]{$Q_{ij}$}{Fluxo de potência reativa entre o nó i e o nó j}
+\nomenclature[V]{$Q_{ki}$}{Fluxo de potência reativa entre o nó k e o nó i}
+\nomenclature[V]{$P_{ij}^{ch}$}{Fluxo de potência ativa na chave entre o nó i e o nó j}
+\nomenclature[V]{$Q_{ij}^{ch}$}{Fluxo de potência reativa na chave entre o nó i e o nó j}
+\nomenclature[V]{$w_{ij}$}{Variável binária que representa o estado da chave entre o nó i e o nó j}
+
+
+\printnomenclature
+
+\clearpage
+
+ 
+
+
+
+
+
+
+
 
 
 

@@ -7,9 +7,7 @@ são restrições cujas variáveis $V_{i}$ e $I_{ij}$ estão sempre na forma qua
     I_{ij}^{sqr} = I_{ij}^{2} \text{ e } V_{i}^{sqr} = V_{i}^{2} 
 \end{align*}
 
-Assim é possível determinar as restrições operativas para o funcionamento da SDEE.
-
-%Buscar referências quanto a 
+Dessa forma é possível determinar as restrições operativas para o funcionamento da SDEE.
 
 \subsubsection{Limites de tensão}
 
@@ -20,6 +18,8 @@ Em um sistema de distribuição de energia elétrica é preciso garantir que a t
 \end{equation}
 
 Onde $\underline{V}$ e $\overline{V}$ representam os limites inferiores e superiores de tensão, respectivamente, que uma rede pode possuir.
+
+
 
 \subsubsection{Limite de corrente}
 
@@ -48,12 +48,12 @@ Considere as seguintes restrições:
     Com base na figura \ref{fig:diagrama_chave} faz-se necessário reformular as equações de balanço de potência adicionando as variáveis que representam as chaves na modelagem do problema.
     
 \begin{equation}
-    \sum_{ji\in\Omega_{l}}P_{ji} - \sum_{ij\in\Omega_{l}}(P_{ij} + R_{ij}I_{ij}^{2})+ \sum_{ji\in\Omega_{ch}}P_{ji}^{ch} -\sum_{ij\in\Omega_{ch}}P_{ij}^{ch} + P_{i}^{S} = P_{i}^{D}\quad\forall i \in\Omega_{b}\label{eq:fluxo_pot_ativa_chaves}  
+    \sum_{ji\in\Omega_{l}}P_{ji} - \sum_{ij\in\Omega_{l}}(P_{ij} + R_{ij}I_{ij}^{sqr})+ \sum_{ji\in\Omega_{ch}}P_{ji}^{ch} -\sum_{ij\in\Omega_{ch}}P_{ij}^{ch} + P_{i}^{S} = P_{i}^{D}\quad\forall i \in\Omega_{b}\label{eq:fluxo_pot_ativa_chaves}  
 \end{equation}
     
     
 \begin{equation}
-    \sum_{ji\in\Omega_{l}}Q_{ji} - \sum_{ij\in\Omega_{l}}(Q_{ij} + X_{ij}I_{ij}^{2})+ \sum_{ji\in\Omega_{ch}}Q_{ji}^{ch} -\sum_{ij\in\Omega_{ch}}Q_{ij}^{ch} + Q_{i}^{S} = P_{i}^{D}\quad\forall i \in\Omega_{b}
+    \sum_{ji\in\Omega_{l}}Q_{ji} - \sum_{ij\in\Omega_{l}}(Q_{ij} + X_{ij}I_{ij}^{sqr})+ \sum_{ji\in\Omega_{ch}}Q_{ji}^{ch} -\sum_{ij\in\Omega_{ch}}Q_{ij}^{ch} + Q_{i}^{S} = P_{i}^{D}\quad\forall i \in\Omega_{b}
     \label{eq:fluxo_pot_reativa_chaves}
 \end{equation}
     

@@ -1,19 +1,18 @@
 \section{Resultados}
+\subsection{Simulação da rede de 45 nós}
 
-Para a análise dos dados dos resultados, considere a rede didática de 45 nós com os seguintes parâmetros:
+Para computar os resultados, utilizou o programa mostrado anteriormente contido no arquivo \verb|PNLIM.mod| presente na listagem~\ref{lst:mod_file}, o qual contem a modelagem do problema de RSD. 
+Nos aquivos \verb|PNLIM.dat| e \verb|Sistema45nos.dat| estão contidos os arquivos de dados (com pontos iniciais já definidos) e os parâmetros da rede, respectivamente mostrados nas listagens~\ref{lst:dat_file} e \ref{lst:sist45nos}.
 
-\begin{table}[H]\footnotesize
-    \begin{minipage}{.5\linewidth}
-        \caption{Parâmetros de impedância e corrente máxima para o conjunto de circuitos da rede didática de 45 nós}
-        \centering
-        \input{00_tables/00_param_imped.tex}
-    \end{minipage}%
-    \begin{minipage}{.5\linewidth}
-        \centering
-        \caption{Potência ativa e reativa de demanda para cada nó da rede didática de 45 nós}
-        \input{00_tables/01_demanda_barras.tex}
-    \end{minipage} 
-\end{table}
+Por fim fora executado o arquivo \verb|PNLIM.run|, presente na listagem~\ref{lst:run_file}, com o auxílio do arquivo \verb|impressao.inc|, na listagem~\ref{lst:imp}. O arquivo de extensão \verb|.run| possui a chamada do modelo, dados e solver responsável pela execução, o arquivo de extensão \verb|.inc| possui comandos para a impressão de dados na tela.
+
+Para encontrar a solução ótima utilizou o \emph{solver} comercial Knitro.
+
+
+\input{00_tables/00_param_imped.tex}
+
+\input{00_tables/01_demanda_barras.tex}
+
 
 \input{00_tables/02_chaves_est_atual.tex}
 
@@ -22,7 +21,7 @@ Para a análise dos dados dos resultados, considere a rede didática de 45 nós 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{01_img/Diagrama_inicial.png}
+    \includegraphics[width=\textwidth]{01_img/rede_inicial.png}
     \caption{Estado inicial da rede de distribuição com alimentador no nó 1}  
     \label{fig:rede_inic}
 \end{figure}
@@ -35,7 +34,7 @@ Para a análise dos dados dos resultados, considere a rede didática de 45 nós 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{01_img/Perfil_tensao_atual.png}
+    \includegraphics[width=\textwidth]{01_img/rede_n_otim.png}
     \caption{Perfil da tensão da rede atual}
     \label{fig:voltages_atual}
 \end{figure}
@@ -64,7 +63,7 @@ Para a análise dos dados dos resultados, considere a rede didática de 45 nós 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{01_img/Perfil_tensao_otim.png}
+    \includegraphics[width=\textwidth]{01_img/rede_otim.png}
     \caption{Perfil de tensão em cada nó após a reconfiguração}
     \label{fig:voltages_otim}
 \end{figure}
@@ -73,6 +72,9 @@ Para a análise dos dados dos resultados, considere a rede didática de 45 nós 
 
 \subsection{Discussão dos resultados}
 
-Com base nos resultados observados anteriormente, algumas ressalvas podem ser feitas com relação aos mesmos.
+Com base nos resultados observados anteriormente, algumas ressalvas podem ser feitas com relação aos mesmos. Como o sistema inicial possuía uma topologia radial (figura~\ref{fig:rede_inic}) os parâmetros de potência (tabela~\ref{tab:fluxo_kW_atual} e tabela~\ref{tab:fluxo_kvar_atual}) puderam ser estabelecidos, bem como o perfil de tensão ao longo da rede (figura~\ref{fig:voltages_atual}).
+Com relação a rede otimizada, observou-se que a nova topologia (figura~\ref{fig:rede_otim}) é radial, como prova disso todos os nós do sistema possui tensão não nula e a demanda dos mesmos são atendidas.
 
-\textbf{citar AgenciaNacionaldeEnergiaEletrica2018ModuloVigencia}
+Comparando os resultados, a partir dos dados da tabela~\ref{tab:comp_topologias} percebe-se que houve uma redução de aproximadamente 45,5\% das perdas de potência ativa e uma redução de aproximadamente 7,41\% das perdas de potência reativa através da rede. 
+
+Já comparando o perfil de tensão mostrados nas tabelas~\ref{fig:voltages_atual} e \ref{fig:voltages_otim} percebe-se que alguns valores de tensões vistas ao longo da rede não otimizada ficam abaixo do estabelecido por norma pela ANEEL, como previsto em \cite{AgenciaNacionaldeEnergiaEletrica2018ModuloVigencia}. Segundo a norma os valores de tensão não podem ser maiores do que 105\% e menores que 93\% dos valores nominais de uma rede de média tensão, nesse caso assumiu-se um rede cuja tensão nominal é de \SI{8,3}{\kilo\volt}. 

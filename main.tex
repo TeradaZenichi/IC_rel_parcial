@@ -1,7 +1,9 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage[utf8]{inputenc}         %Permite acentuação
 \usepackage[brazilian]{babel}       %Adequação para a lingua portugues
+\usepackage[hyphens]{url}           %Pacote para hifenizar urls
 \usepackage{courier}                %Pacote fonte de listing que suporta negrito
+\usepackage{verbatim}               %Pacote para citação de arquivos
 \usepackage{amsmath}                %Pacote auxiliar para matemática
 \usepackage{graphicx}               %Importação de imagem
 \usepackage{cite}                   %Pacote de citações
@@ -21,6 +23,12 @@
 \usepackage{fancybox}               %Pacote para a inserção de caixas de texto
 \usepackage{booktabs}               %Pacote para adicionar tabelas lado a lado
 \usepackage{subfig}                 %pacote para criação de subfiguras
+\usepackage{nomencl}                %Pacote que permite criar seção de nomenclaturas
+\usepackage{etoolbox}               %Pacote para criar sub-grupos em nomenclaturas
+\usepackage{xcolor}                 %Pacote para cirar caixas coloridas
+\usepackage{tcolorbox}              %Pacote para criar caixas
+\usepackage{multirow}               %permite o uso de multiplas linhas em tabelas
+\usepackage{listofsymbols}          %Criação da lista de símbolos
 
 \input{03_conf/0_Configpage.tex}            %Arquivo de configuração do projeto
 
@@ -29,6 +37,7 @@
     \input{03_conf/1_Coverpage.tex}         %Adiciona a página de capa do projeto
     \input{0.0_Pretextpage.tex}             %Adiciona página de elementos pré textuais
     \tableofcontents                        %Adiciona o sumário no documento
+    \clearpage                              %Quebra de página
     \input{1.0_Introduction.tex}            %Adiciona a introdução do documento
     \input{2.0_Objectives.tex}              %Adciona a seção de objetivos
     \input{3.0_methodology.tex}             %Adciona seção de metodologia
@@ -40,7 +49,9 @@
     \input{5.0_Formulation.tex}             %Adiciona a formulação do problema
     \input{6.0_Program.tex}                 %Adiciona o programa de otimização
     \input{7.0_Results.tex}                 %Adiciona os resultados obtidos
+    \input{8.0_Conclusion.tex}              %Adiciona a última seção do documento
+    \input{9.0_Annex.tex}
     \bibliographystyle{plain}               %Estilo de apresentação da bibliografia
-    \bibliography{mendeley.bib,webpage.bib} %Arquivos de referência para importação
+    \bibliography{mendeley,webpage} %Arquivos de referência para importação
 
 \end{document}

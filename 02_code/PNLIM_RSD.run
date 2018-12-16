@@ -1,0 +1,21 @@
+# elimina todos os elementos da memória
+reset ;
+
+# muda ao modo modelo
+model PNLIM_RSD.mod;
+
+# muda ao modo dado
+data PNLIM_RSD.dat;
+
+# define KNITRO como solucionador ou solver
+option solver knitro;
+
+# soluciona o modelo
+solve custo_perdas;
+
+# PASSO 4
+# Escrever o relatório de resultados.
+# mostrar os resultados
+include impressao.inc;
+
+

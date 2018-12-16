@@ -1,26 +1,24 @@
 \section{Introdução}
 
-Os sistemas de distribuição de energia elétrica (SDEE) são planejados como redes malhadas interconectadas.
-Entretanto, operam como com uma topologia radial a fim da facilitar a coordenação da proteção e reduzir a corrente de curto circuito dos SDEE.
+Os sistemas de distribuição de energia elétrica (SDEE) são planejados como redes de malhas interconectadas. Com a finalidade de operar de forma mais eficiente de modo a coordenar a proteção do sistema mais facilmente e reduzir a corrente de curto circuito, o SDEE opera com uma topologia radial \cite{Romais2014ReconfiguracaoMista}.
 
-Para obter uma topologia radial existem chaves em pontos estratégicos do sistema de distribuição de energia elétrica que interconectam seus nós.
-Desse modo, a topologia inicial pode ser modificada pela operação das chaves para transferir as demandas entre os diferentes alimentadores e, assim, é possível determinar uma nova topologia com outro ponto de operação, contudo deve continuar sendo uma topologia radial.
+Os SDEE devem operar de forma a respeitar tanto as restrições de carga quanto as restrições operacionais. Dado que o sistema está operando em regime permanente é interessante operá-lo em estado de mínimas perdas. Para isso reconfigura-se o sistema de distribuição de modo a reduzir as perdas ôhmicas ao longo da rede.
 
-O problema de reconfiguração das redes de distribuição (RSD) é um problema de planejamento da operação das chaves alocadas ao longo dos alimentadores e consiste na abertura e/ou fechamento das chaves com o objetivo de melhorar um índice de desempenho.
-Dependendo dos tipos, da quantidade e a alocação das chaves, sua comutação pode ser aproveitada por empresas de distribuição com a finalidade de minimizar, por exemplo as perdas de potência ativa no sistema. Entretanto existe diversas restrições operacionais que os operadores da rede devem respeitar na hora de reconfigurar a topologia da rede.
+O problema de reconfiguração do sistema de distribuição (RSD) é um problema de planejamento da operação das chaves alocadas ao longo dos alimentadores e consiste na abertura e/ou fechamento das chaves com o objetivo de melhorar um índice de desempenho.
 
-A reconfiguração ótima é uma importante ferramenta para aumentar a confiabilidade de um SDEE, especialmente quando a automação avançada e tecnologias de redes inteligentes (smartgrids) tornam-se mais importante e mais acessível às concessionarias de distribuição.
+A reconfiguração ótima é uma importante ferramenta para aumentar a confiabilidade de um SDEE, especialmente quando a automação avançada e tecnologias de redes inteligentes (smartgrids) tornam-se mais importantes e mais acessíveis às concessionarias de distribuição.
 
-Os benefícios ao reduzir as perdas de potência ativa no sistema de distribuição:
-
+Os benefícios ao reduzir as perdas de potência ativa no sistema de distribuição são:% : -> são:
+             % ao -> de se
 \begin{itemize}
-    \item Alívio do sistema de distribuição: com a redução das perdas de potência ativa, o sistema é aliviado, o que leva a uma maior vida útil dos equipamentos, uma maior capacidade de fornecimento e a um melhor perfil da magnitude de tensão no sistema;
-    
+    \item Alívio do sistema de distribuição: com a redução das perdas de potência ativa, o sistema é aliviado, o que leva a uma maior vida útil dos equipamentos, uma maior capacidade de fornecimento e um melhor perfil da magnitude de tensão no sistema;
+   % a um -> um (você não colocou esse a antes do segundo item, "uma maior capacidade", mas colocou antes desse terceiro. Acho que não está errado, só estranhei)---Feito
     \item Adiamento de investimentos para a expansão do sistema de distribuição: a redução das perdas de potência tem como consequência a redução dos fluxos de potência nos condutores, e desta forma é adiada a necessidade de reforços na rede.
     
     \item Melhoria na qualidade de energia: a reconfiguração melhora o perfil da magnitude de tensão do sistema;
     
-    \item Adiantamento da necessidade de ampliação da capacidade de transmissão: a rede de distribuição pode reduzir o carregamento de linhas de transmissão no horário de pico, aumentando efetivamente a capacidade de transmissão;
+    % não seria "adiamento"?
+    \item Adiamento da necessidade de ampliação da capacidade de transmissão: a rede de distribuição pode reduzir o carregamento de linhas de transmissão no horário de pico, aumentando efetivamente a capacidade de transmissão;
     
     \item Adiamento da ampliação da capacidade de geração: menos unidades de geração operando são necessárias no horário de pico;
     
@@ -31,4 +29,34 @@ Os benefícios ao reduzir as perdas de potência ativa no sistema de distribuiç
     \item Redução na contratação de energia elétrica para grandes clientes: ao reduzir as perdas das redes dos grandes clientes, reduz-se o consumo de energia elétrica.
 \end{itemize}
 
+A reconfiguração do sistema de distribuição é um problema de otimização cuja modelagem matemática pode ser classificada das seguintes formas, como descrito em \cite{Goncalves2013ModelosRadiais}:
+
+\begin{itemize}
+    \item PL: Programação Linear
+    
+    \item PNL: Programação não linear
+    
+    \item PLIM: Programação linear inteiro misto
+    
+    \item PNLIM: Programação não linear inteiro misto
+\end{itemize}
+
+Para solucionar esses problemas utilizam-se de ``solvers'' que são programas cuja finalidade é encontrar uma solução ótima para um problema de programação.
+
+Problemas de PL podem ser resolvidos usando algoritmos convencionais como simplex e pontos interiores.
+Já para problemas de PNL existem diversas técnicas como método de Newton e relaxação Lagrangeana.
+Problemas de PLIM podem ser resolvidos usando técnicas baseadas em branch and bound.
+Por fim um problema de PNLIM são complicados de serem solucionados e imagina-se que solvers comerciais usem algoritmos baseados em \emph{branch and bound}. % comerciais usam -> comerciais usem (não tenho certeza...) -- Feito
+%talvez o uso de um termo em inglês como "branch and bound" fique melhor se escrito em itálico (mesma coisa pra sentença anterior)
+O problema de RSD, como será visto, é um problema não linear inteiro misto.
+Problemas não lineares são complicados de serem solucionados devido à dificuldade de convergência dos algoritmos usados para determinar soluções ótimas. %devido a -> devido à (só pensar em reestruturar a frase para "por causa da dificuldade de...". Como a frase ficou com um "da" ao invés de um "de" (troque por um "de" e veja como fica estranho) antes da palavra dificuldade, então existe um artigo "a" antes de "dificuldade". Como "devido" tem a preposição "a", então você acaba com dois "a", virando um "à". Espero ter mais exclarecido do que confundido :D)
+Além disso, em problemas de PL e PLIM existem condições necessárias e suficientes de otimização teoricamente provadas que garantem se uma dada solução é factível ou não.
+Já para problemas PNL e PNLIM não existem tais condições. Por outro lado existem as heurísticas e meta-heurísticas que buscam resolver esses problemas de forma a buscar uma solução satisfatória em tempo adequado \cite{Goncalves2013ModelosRadiais}.  
+
 %Trabalho realizados anteriormente
+% redes radias -> redes radiais
+Alguns trabalhos relevantes na literatura que abordam a reconfiguração de redes radiais com demandas fixas foram tratados em \cite{Baran1989NetworkBalancing } abordando algoritmos heurísticos%faltou um ponto final
+
+Algoritmos genéticos como mostrado em  \cite{Souza2015AlgoritmoVariaveis} se mostraram interessantes para resolver problemas de característica não linear.
+Em \cite{deCastro2002AnOptimization} mostra-se uma interessante abordagem que simula o comportamento do sistema imunológico do corpo humano para solucionar um problema de otimização não linear.
+Outra abordagem interessante é a transformação de um problema PNLIM em um problema PCSOIM (programação cônica de segunda ordem inteiro misto) através do relaxamento de uma restrição do problema \cite{Romais2014ReconfiguracaoMista}.

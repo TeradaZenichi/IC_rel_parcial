@@ -1,4 +1,6 @@
 \section{Modelo matemático do problema}
+\subsection{Modelagem do problema}
+
 
 Com base nas deduções e hipóteses adotadas anteriormente, o problema de reconfiguração de uma rede elétrica radial pode ser representado utilizando um modelo de programação linear inteiro misto (PNLIM), mostrado a seguir:
 
@@ -52,3 +54,9 @@ Sujeito a:
 \begin{equation*}
     w_{ij}\quad\text{binário}\qquad\forall ij \in\Omega_{ch}
 \end{equation*}
+
+\subsection{Não linearidade}
+
+A não linearidade desse problema está relacionada a restrição expressa na equação~\ref{eq:corrente_magnitude} a qual envolve o produto de duas variáveis quadráticas do sistema, bem como a presença de variáveis binárias ($w_{ij}$), caracterizando-se como um problema de programação não linear inteiro misto.
+Dessa forma o problema não pode ser resolvido por \emph{solvers} lineares tais como CEPLEX e sim por programas capazes de resolve-lo como o Knitro e Bonmin, por exemplo.
+
